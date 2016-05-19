@@ -7,3 +7,25 @@
 		-webkit-transform-style
 		-webkit-backface-visibility
 */
+.portfolio-item{
+  margin:100px;
+  float: left;
+}
+.front{
+  position: absolute;
+  transform: perspective(1000px) rotateY(0deg);
+  backface-visibility: hidden;
+  transition: transform .5s linear 0s;
+}
+.back{
+  position: absolute;
+  transform: perspective(1000px) rotateY(180deg);
+  backface-visibility: hidden;
+  transition: transform .5s linear 0s;
+}
+.portfolio-item:hover > .front{
+  transform: perspective(1000px) rotateY(-180deg);
+}
+.portfolio-item:hover > .back{
+  transform: perspective(1000px) rotateY(0deg);
+}
